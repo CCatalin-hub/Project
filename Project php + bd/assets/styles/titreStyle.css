@@ -1,0 +1,11 @@
+.titleBlock {
+    margin: 30px;
+}
+
+.pageTitle,
+.pageInfo {
+    font-family: system-ui, sans-serif;
+    text-align: center;
+    display: block;
+    margin: 0;
+}
