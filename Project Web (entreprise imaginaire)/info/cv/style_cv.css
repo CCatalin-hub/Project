@@ -1,0 +1,174 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --bg-light: #f4f7f6;
+    --text-dark: #333;
+}
+
+/* Configuration de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.4; /* Légèrement augmenté pour la lisibilité */
+}
+
+/* Conteneur Format A4 */
+.cv-container {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    background: white;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Sidebar (Colonne de gauche) */
+.sidebar {
+    width: 32%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 25px 20px; /* Un peu plus d'espace */
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-img {
+    width: 130px; /* Un peu plus grande */
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.sidebar h1 {
+    font-size: 1.6rem; /* Plus grand */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.sidebar h2 {
+    font-size: 1.2rem; /* Plus grand */
+    color: var(--accent-color);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin: 20px 0 10px 0;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+/* Texte des listes dans la sidebar et balises p */
+.sidebar li, .sidebar a, .sidebar p {
+    font-size: 0.95rem; /* Augmenté (était 0.85) */
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-bottom: 6px;
+}
+
+/* Contenu Principal (Colonne de droite) */
+.main-content {
+    width: 68%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-text {
+    font-size: 1.05rem; /* Un peu plus grand que le reste */
+    font-style: italic;
+    color: var(--primary-color);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem; /* Augmenté (était 1.3) */
+    border-bottom: 2px solid var(--accent-color);
+    margin: 20px 0 15px 0;
+    text-transform: uppercase;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+.header-item strong {
+    color: var(--primary-color);
+    font-size: 1.15rem; /* Augmenté (était 1.0) */
+}
+
+.header-item span {
+    font-size: 0.95rem; /* Augmenté (était 0.85) */
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* Corps de texte principal */
+li, p {
+    font-size: 1rem; /* Taille standard lisible (était 0.9) */
+    margin-bottom: 4px;
+}
+
+/* Bouton d'impression */
+.print_button {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 25px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Gestion du mode Impression */
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    
+    body {
+        background: none;
+    }
+
+    .cv-container {
+        margin: 0;
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+    }
+
+    .print_button {
+        display: none;
+    }
+
+    .sidebar {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
